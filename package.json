@@ -1,0 +1,28 @@
+{
+  "name": "solidity-g4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambacha/solidity-g4.git"
+  },
+  "keywords": [],
+  "author": "sam bacha",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/sambacha/solidity-g4/issues"
+  },
+  "homepage": "https://github.com/sambacha/solidity-g4#readme",
+  "devDependencies": {
+    "ctix": "^0.3.1",
+    "ts-node-dev": "^1.1.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  }
+}
