@@ -22,6 +22,7 @@ import { Vocabulary } from "antlr4ts/Vocabulary";
 import { VocabularyImpl } from "antlr4ts/VocabularyImpl";
 
 import * as Utils from "antlr4ts/misc/Utils";
+import { SolidityLexer } from "./SolidityLexer";
 
 import { SolidityParserListener } from "./SolidityParserListener";
 
@@ -7128,6 +7129,12 @@ export class SourceUnitContext extends ParserRuleContext {
 
 
 export class PragmaDirectiveContext extends ParserRuleContext {
+  pragmaValue() {
+    throw new Error('Method not implemented.');
+  }
+  pragmaName(): ParserRuleContext | import("antlr4ts/tree/ParseTree").ParseTree {
+    throw new Error('Method not implemented.');
+  }
 	public Pragma(): TerminalNode { return this.getToken(SolidityParser.Pragma, 0); }
 	public PragmaSemicolon(): TerminalNode { return this.getToken(SolidityParser.PragmaSemicolon, 0); }
 	public PragmaToken(): TerminalNode[];
@@ -7160,6 +7167,12 @@ export class PragmaDirectiveContext extends ParserRuleContext {
 
 
 export class ImportDirectiveContext extends ParserRuleContext {
+  importPath(): ParserRuleContext | import("antlr4ts/tree/ParseTree").ParseTree {
+    throw new Error('Method not implemented.');
+  }
+  importDeclaration() {
+    throw new Error('Method not implemented.');
+  }
 	public _unitAlias!: IdentifierContext;
 	public Import(): TerminalNode { return this.getToken(SolidityParser.Import, 0); }
 	public Semicolon(): TerminalNode { return this.getToken(SolidityParser.Semicolon, 0); }
@@ -7294,6 +7307,12 @@ export class SymbolAliasesContext extends ParserRuleContext {
 
 
 export class ContractDefinitionContext extends ParserRuleContext {
+  inheritanceSpecifier() {
+    throw new Error('Method not implemented.');
+  }
+  contractPart() {
+    throw new Error('Method not implemented.');
+  }
 	public _name!: IdentifierContext;
 	public Contract(): TerminalNode { return this.getToken(SolidityParser.Contract, 0); }
 	public LBrace(): TerminalNode { return this.getToken(SolidityParser.LBrace, 0); }
@@ -7454,6 +7473,12 @@ export class InheritanceSpecifierListContext extends ParserRuleContext {
 
 
 export class InheritanceSpecifierContext extends ParserRuleContext {
+  expressionList() {
+    throw new Error('Method not implemented.');
+  }
+  userDefinedTypeName(): SP.UserDefinedTypeNameContext {
+    throw new Error('Method not implemented.');
+  }
 	public _name!: IdentifierPathContext;
 	public _arguments!: CallArgumentListContext;
 	public identifierPath(): IdentifierPathContext {
@@ -7661,6 +7686,12 @@ export class IdentifierPathContext extends ParserRuleContext {
 
 
 export class ModifierInvocationContext extends ParserRuleContext {
+  expressionList() {
+    throw new Error('Method not implemented.');
+  }
+  identifier(): ParserRuleContext | import("antlr4ts/tree/ParseTree").ParseTree {
+    throw new Error('Method not implemented.');
+  }
 	public identifierPath(): IdentifierPathContext {
 		return this.getRuleContext(0, IdentifierPathContext);
 	}
@@ -7713,6 +7744,9 @@ export class VisibilityContext extends ParserRuleContext {
 
 
 export class ParameterListContext extends ParserRuleContext {
+  parameter() {
+    throw new Error('Method not implemented.');
+  }
 	public _parameterDeclaration!: ParameterDeclarationContext;
 	public _parameters: ParameterDeclarationContext[] = [];
 	public parameterDeclaration(): ParameterDeclarationContext[];
@@ -7857,6 +7891,18 @@ export class ConstructorDefinitionContext extends ParserRuleContext {
 
 
 export class StateMutabilityContext extends ParserRuleContext {
+  PureKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  ConstantKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  PayableKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  ViewKeyword() {
+    throw new Error('Method not implemented.');
+  }
 	public Pure(): TerminalNode | undefined { return this.tryGetToken(SolidityParser.Pure, 0); }
 	public View(): TerminalNode | undefined { return this.tryGetToken(SolidityParser.View, 0); }
 	public Payable(): TerminalNode | undefined { return this.tryGetToken(SolidityParser.Payable, 0); }
@@ -7881,6 +7927,9 @@ export class StateMutabilityContext extends ParserRuleContext {
 
 
 export class OverrideSpecifierContext extends ParserRuleContext {
+  userDefinedTypeName() {
+    throw new Error('Method not implemented.');
+  }
 	public _identifierPath!: IdentifierPathContext;
 	public _overrides: IdentifierPathContext[] = [];
 	public Override(): TerminalNode { return this.getToken(SolidityParser.Override, 0); }
@@ -7925,6 +7974,15 @@ export class OverrideSpecifierContext extends ParserRuleContext {
 
 
 export class FunctionDefinitionContext extends ParserRuleContext {
+  modifierList() {
+    throw new Error('Method not implemented.');
+  }
+  returnParameters() {
+    throw new Error('Method not implemented.');
+  }
+  functionDescriptor() {
+    throw new Error('Method not implemented.');
+  }
 	public visibilitySet: boolean = false;
 	public mutabilitySet: boolean = false;
 	public virtualSet: boolean = false;
@@ -8036,6 +8094,9 @@ export class FunctionDefinitionContext extends ParserRuleContext {
 
 
 export class ModifierDefinitionContext extends ParserRuleContext {
+  VirtualKeyword() {
+    throw new Error('Method not implemented.');
+  }
 	public virtualSet: boolean = false;
 	public overrideSpecifierSet: boolean = false;
 	public _name!: IdentifierContext;
@@ -8279,6 +8340,9 @@ export class ReceiveFunctionDefinitionContext extends ParserRuleContext {
 
 
 export class StructDefinitionContext extends ParserRuleContext {
+  variableDeclaration() {
+    throw new Error('Method not implemented.');
+  }
 	public _name!: IdentifierContext;
 	public _members!: StructMemberContext;
 	public Struct(): TerminalNode { return this.getToken(SolidityParser.Struct, 0); }
@@ -8347,6 +8411,9 @@ export class StructMemberContext extends ParserRuleContext {
 
 
 export class EnumDefinitionContext extends ParserRuleContext {
+  enumValue() {
+    throw new Error('Method not implemented.');
+  }
 	public _name!: IdentifierContext;
 	public _identifier!: IdentifierContext;
 	public _enumValues: IdentifierContext[] = [];
@@ -8423,6 +8490,21 @@ export class UserDefinedValueTypeDefinitionContext extends ParserRuleContext {
 
 
 export class StateVariableDeclarationContext extends ParserRuleContext {
+  InternalKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  PublicKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  PrivateKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  ConstantKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  ImmutableKeyword() {
+    throw new Error('Method not implemented.');
+  }
 	public constantnessSet: boolean = false;
 	public visibilitySet: boolean = false;
 	public overrideSpecifierSet: boolean = false;
@@ -8581,6 +8663,12 @@ export class EventParameterContext extends ParserRuleContext {
 
 
 export class EventDefinitionContext extends ParserRuleContext {
+  eventParameterList() {
+    throw new Error('Method not implemented.');
+  }
+  AnonymousKeyword() {
+    throw new Error('Method not implemented.');
+  }
 	public _name!: IdentifierContext;
 	public _eventParameter!: EventParameterContext;
 	public _parameters: EventParameterContext[] = [];
@@ -8740,6 +8828,12 @@ export class UsingDirectiveContext extends ParserRuleContext {
 
 
 export class TypeNameContext extends ParserRuleContext {
+  userDefinedTypeName() {
+    throw new Error('Method not implemented.');
+  }
+  mapping() {
+    throw new Error('Method not implemented.');
+  }
 	public elementaryTypeName(): ElementaryTypeNameContext | undefined {
 		return this.tryGetRuleContext(0, ElementaryTypeNameContext);
 	}
@@ -8814,6 +8908,15 @@ export class ElementaryTypeNameContext extends ParserRuleContext {
 
 
 export class FunctionTypeNameContext extends ParserRuleContext {
+  functionTypeParameterList(arg0: number) {
+    throw new Error('Method not implemented.');
+  }
+  InternalKeyword() {
+    throw new Error('Method not implemented.');
+  }
+  ExternalKeyword() {
+    throw new Error('Method not implemented.');
+  }
 	public visibilitySet: boolean = false;
 	public mutabilitySet: boolean = false;
 	public _arguments!: ParameterListContext;
@@ -8886,6 +8989,9 @@ export class FunctionTypeNameContext extends ParserRuleContext {
 
 
 export class VariableDeclarationContext extends ParserRuleContext {
+  storageLocation() {
+    throw new Error('Method not implemented.');
+  }
 	public _type!: TypeNameContext;
 	public _location!: DataLocationContext;
 	public _name!: IdentifierContext;
@@ -8943,6 +9049,21 @@ export class DataLocationContext extends ParserRuleContext {
 
 
 export class ExpressionContext extends ParserRuleContext {
+  typeName(): TypeNameContext {
+    throw new Error('Method not implemented.');
+  }
+  expression(arg0: number): ExpressionContext {
+    throw new Error('Method not implemented.');
+  }
+  identifier(): ParserRuleContext | import("antlr4ts/tree/ParseTree").ParseTree {
+    throw new Error('Method not implemented.');
+  }
+  functionCallArguments() {
+    throw new Error('Method not implemented.');
+  }
+  nameValueList(): SP.NameValueListContext {
+    throw new Error('Method not implemented.');
+  }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
@@ -9642,6 +9763,21 @@ export class InlineArrayContext extends ExpressionContext {
 	}
 }
 export class PrimaryExpressionContext extends ExpressionContext {
+  BooleanLiteral() {
+    throw new Error('Method not implemented.');
+  }
+  hexLiteral() {
+    throw new Error('Method not implemented.');
+  }
+  stringLiteral() {
+    throw new Error('Method not implemented.');
+  }
+  numberLiteral() {
+    throw new Error('Method not implemented.');
+  }
+  TypeKeyword() {
+    throw new Error('Method not implemented.');
+  }
 	public identifier(): IdentifierContext | undefined {
 		return this.tryGetRuleContext(0, IdentifierContext);
 	}
@@ -9786,6 +9922,7 @@ export class InlineArrayExpressionContext extends ParserRuleContext {
 
 
 export class IdentifierContext extends ParserRuleContext {
+  length: number;
 	public Identifier(): TerminalNode | undefined { return this.tryGetToken(SolidityParser.Identifier, 0); }
 	public From(): TerminalNode | undefined { return this.tryGetToken(SolidityParser.From, 0); }
 	public Error(): TerminalNode | undefined { return this.tryGetToken(SolidityParser.Error, 0); }
@@ -10336,6 +10473,9 @@ export class BreakStatementContext extends ParserRuleContext {
 
 
 export class TryStatementContext extends ParserRuleContext {
+  returnParameters() {
+    throw new Error('Method not implemented.');
+  }
 	public _returnParameters!: ParameterListContext;
 	public Try(): TerminalNode { return this.getToken(SolidityParser.Try, 0); }
 	public expression(): ExpressionContext {
@@ -10440,6 +10580,9 @@ export class ReturnStatementContext extends ParserRuleContext {
 
 
 export class EmitStatementContext extends ParserRuleContext {
+  functionCall(): FunctionCallContext {
+    throw new Error('Method not implemented.');
+  }
 	public Emit(): TerminalNode { return this.getToken(SolidityParser.Emit, 0); }
 	public expression(): ExpressionContext {
 		return this.getRuleContext(0, ExpressionContext);
@@ -10469,6 +10612,9 @@ export class EmitStatementContext extends ParserRuleContext {
 
 
 export class RevertStatementContext extends ParserRuleContext {
+  functionCall(): FunctionCallContext {
+    throw new Error('Method not implemented.');
+  }
 	public Revert(): TerminalNode { return this.getToken(SolidityParser.Revert, 0); }
 	public expression(): ExpressionContext {
 		return this.getRuleContext(0, ExpressionContext);
@@ -10616,6 +10762,12 @@ export class VariableDeclarationTupleContext extends ParserRuleContext {
 
 
 export class VariableDeclarationStatementContext extends ParserRuleContext {
+  identifierList() {
+    throw new Error('Method not implemented.');
+  }
+  variableDeclarationList() {
+    throw new Error('Method not implemented.');
+  }
 	public Semicolon(): TerminalNode { return this.getToken(SolidityParser.Semicolon, 0); }
 	public variableDeclaration(): VariableDeclarationContext | undefined {
 		return this.tryGetRuleContext(0, VariableDeclarationContext);

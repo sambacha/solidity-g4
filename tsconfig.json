@@ -1,0 +1,22 @@
+{
+  "include": ["src/**/*.ts"],
+ "exclude": ["build", "typechain", "node_modules"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "downlevelIteration": true,
+    "lib": ["es2016"],
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
